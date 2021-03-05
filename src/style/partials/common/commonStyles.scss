@@ -41,7 +41,7 @@ a {
   }
 
   .slick-arrow {
-    @include tMax {
+    @include dMax {
       top: auto;
       bottom: 57px;
       width: 60px;
