@@ -590,8 +590,10 @@ a {
   }
 
   &-smarl_mobile {
-    p:not(:first-child) {
-      display: none;
+    @include mMax {
+      p:not(:first-child) {
+        display: none;
+      }
     }
   }
 
