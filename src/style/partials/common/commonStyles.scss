@@ -83,6 +83,16 @@ a {
     min-height: 681px;
     height: 100%;
 
+    @media (min-width: 1511px) {
+      background-position: 50% 0 !important;
+    }
+    @media (min-width: 1240px) and (max-width: 1510px) {
+      background-position: 90% 0 !important;
+    }
+    @media (min-width: 768px) and (max-width: 1239px) {
+      background-position: 75% 0 !important;
+    }
+
     @include tMax {
       min-height: 510px;
     }
@@ -2071,7 +2081,6 @@ a {
           margin-top: 55px;
         }
       }
-
       .recovery__title {
         font-size: 16px;
         line-height: 20px;
