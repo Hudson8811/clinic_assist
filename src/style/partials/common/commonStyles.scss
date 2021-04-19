@@ -2089,3 +2089,27 @@ a {
     }
   }
 }
+
+.new_table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+
+  &_section {
+    padding: 20px 0;
+  }
+
+  td,
+  th {
+    padding: 10px;
+    text-align: center;
+    min-width: 100px;
+    border: 1px solid #143862;
+  }
+
+  &_wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 auto;
+  }
+}

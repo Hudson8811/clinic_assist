@@ -27,6 +27,7 @@ var path = {
     html: "src/*.html",
     js: "src/js/main.js",
     style: "src/style/main.scss",
+    oldStyle:"src/style/partials/common/old.scss",
     images: "src/images/**/*.*",
     img: "src/img/**/*.*",
     fonts: "src/fonts/**/*.*",
@@ -35,6 +36,7 @@ var path = {
     html: "src/**/*.html",
     js: "src/js/**/*.js",
     style: "src/style/**/*.scss",
+    oldStyle:"src/style/partials/common/old.scss",
     images: "src/images/**/*.*",
     img: "src/img/**/*.*",
     fonts: "src/fonts/**/*.*",
@@ -102,6 +104,26 @@ gulp.task("style:build", function () {
   );
 });
 
+gulp.task("oldStyle:build", function () {
+  return (
+    gulp
+      .src(path.src.oldStyle)
+      .pipe(plumber())
+      .pipe(sourcemaps.init())
+      .pipe(sass())
+      //.pipe(gcmq())
+      .pipe(
+        autoprefixer({
+          browsers: ["last 2 versions"],
+        })
+      )
+      .pipe(cleanCSS({ rebase: false }))
+      .pipe(sourcemaps.write("./maps"))
+      .pipe(gulp.dest(path.build.css))
+      .pipe(reload({ stream: true }))
+  );
+});
+
 gulp.task("images:build", function () {
   return (
     gulp
@@ -144,12 +166,14 @@ gulp.task(
     "fonts:build",
     "images:build",
     "img:build",
+    "oldStyle:build"
   )
 );
 
 gulp.task("watch", function () {
   gulp.watch([path.watch.html], gulp.series("html:build"));
   gulp.watch([path.watch.style], gulp.series("style:build"));
+  gulp.watch([path.watch.style], gulp.series("oldStyle:build"));
   gulp.watch([path.watch.js], gulp.series("js:build"));
   gulp.watch([path.watch.img], gulp.series("img:build"));
   gulp.watch([path.watch.images], gulp.series("images:build"));
