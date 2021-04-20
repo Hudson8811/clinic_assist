@@ -627,6 +627,8 @@ a {
     }
   }
 
+  &-content{clear:both;}
+
   &-content + &-content {
     margin-top: 100px;
 
@@ -760,6 +762,7 @@ a {
     background-color: rgba(58, 185, 75, 0.06);
     padding: 54px;
     margin-top: 85px;
+    clear: both;
 
     @include tMax {
       margin-top: 45px;
