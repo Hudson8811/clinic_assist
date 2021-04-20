@@ -752,6 +752,13 @@ a {
         }
       }
     }
+    li ul{
+      margin-bottom: 20px;
+      margin-top: 10px;
+      @include mMax {
+        margin-top: 0;
+      }
+    }
   }
 
   &-disclamer {
