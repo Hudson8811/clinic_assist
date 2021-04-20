@@ -735,9 +735,9 @@ a {
         &:before {
           content: '';
           position: absolute;
-          top: 10px;
+          top: 12px;
           left: 0;
-          display: block;
+          display: block !important;
           width: 16px;
           height: 1px;
           background-color: #3ab94b;
