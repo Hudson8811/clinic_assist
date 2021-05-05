@@ -645,7 +645,7 @@ a {
     position: relative;
 
     .new_text_block-texts {
-      max-width: 670px;
+      //max-width: 670px;
 
       @include mMax {
         clear: both;
@@ -667,11 +667,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: 345px;
+    width: 500px;
     border: 1px solid #f8f8f8;
     flex-shrink: 0;
     float: right;
+    margin-bottom: 40px;
 
     @include tMax {
       width: 316px;
@@ -923,6 +923,21 @@ a {
 
       @include mMax {
         margin: 0;
+      }
+      span {
+        display: block;
+        font-size: 30px;
+        line-height: 40px;
+        color: #143862;
+
+        @include mMax {
+          width: 100%;
+          font-size: 17px;
+          line-height: 23px;
+          font-weight: 500;
+          position: relative;
+          margin-bottom: 20px;
+        }
       }
     }
 
