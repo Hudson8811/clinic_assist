@@ -1,7 +1,3 @@
-.b-recovery{
-  clear: both;
-}
-
 body {
   background-color: #fff;
   font-weight: 400;
@@ -1497,39 +1493,6 @@ a {
     padding: 40px 0 30px;
   }
 
-  &-title {
-    display: block;
-    margin-bottom: 50px;
-    box-sizing: border-box;
-    font-size: 40px;
-    line-height: 50px;
-    text-transform: uppercase;
-    font-weight: 300;
-    color: #fff;
-
-    @include tMax {
-      margin-bottom: 25px;
-      font-size: 24px;
-      line-height: 30px;
-    }
-
-    @include mMax {
-      font-size: 18px;
-      line-height: 24px;
-      text-align: center;
-    }
-  }
-
-  &-content {
-    display: block;
-    width: 100%;
-    max-width: 500px;
-
-    @include tMax {
-      max-width: 339px;
-    }
-  }
-
   .green-btn {
     width: 100%;
     max-width: 305px;
@@ -1541,6 +1504,48 @@ a {
       margin-right: auto;
     }
   }
+}
+
+.new_price .new_price{
+	&-title {
+		display: block;
+		margin-bottom: 50px;
+		box-sizing: border-box;
+		font-size: 40px;
+		line-height: 50px;
+		text-transform: uppercase;
+		font-weight: 300;
+		color: #fff;
+
+		@include tMax {
+			margin-bottom: 25px;
+			font-size: 24px;
+			line-height: 30px;
+		}
+
+		@include mMax {
+			font-size: 18px;
+			line-height: 24px;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&-content {
+		display: block;
+		width: 100%;
+		max-width: 500px;
+
+		@include tMax {
+			max-width: 339px;
+		}
+		@include mMax {
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+	}
 }
 
 .new_reviews {
@@ -1941,6 +1946,9 @@ a {
     list-style: none;
 
     li {
+		-webkit-column-break-inside: avoid;
+		page-break-inside: avoid;
+		break-inside: avoid-column;
       a {
         display: block;
         font-size: 20px;
@@ -2047,84 +2055,13 @@ a {
     }
 
     .ban1__text {
+		margin-left: auto;
+		margin-right: auto;
       width: calc(100% - 56px);
     }
 
     .ban1__items {
       margin: 0;
-    }
-  }
-}
-
-.b-recovery {
-  @include tMax {
-    padding: 55px 0;
-
-    .b-title-h1 {
-      margin-bottom: 35px;
-      font-size: 36px;
-      line-height: 40px;
-    }
-
-    .recovery__item {
-      width: calc(50% - 8px);
-      margin-right: 8px;
-
-      &:nth-child(2) {
-        margin-right: 0;
-      }
-
-      &:last-child {
-        width: 100%;
-      }
-    }
-
-    .recovery__text {
-      font-size: 14px;
-      line-height: 20px;
-    }
-  }
-
-  @include mMax {
-    padding: 30px 0 40px;
-
-    .b-title-h1 {
-      margin-bottom: 40px;
-      font-size: 24px;
-      line-height: 30px;
-      font-weight: 400;
-    }
-
-    .recovery__row {
-      margin: 0;
-      display: block;
-
-      .recovery__item {
-        width: 100%;
-        padding: 0;
-
-        &:hover {
-          box-shadow: none;
-        }
-
-        & + .recovery__item {
-          margin-top: 55px;
-        }
-      }
-      .recovery__title {
-        font-size: 16px;
-        line-height: 20px;
-        margin: 20px 0 10px;
-      }
-
-      .recovery__img {
-        margin-bottom: 0;
-      }
-
-      .recovery__item:before {
-        top: -28px;
-        left: 25px;
-      }
     }
   }
 }
